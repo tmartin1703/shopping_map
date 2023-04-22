@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'widgets/lets_shop_button.dart';
+import 'package:shopping_map/screens/main_screen.dart';
+import 'package:shopping_map/screens/shopping_screen.dart';
+import 'package:shopping_map/screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,11 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
+  final List<Widget> _pageList = const [
+    MainScreen(),
+    ShoppingScreen(),
+    ProfileScreen()
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -38,53 +44,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            const SizedBox(
-              height: 64.0,
-            ),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 24.0),
-                child: Text(
-                  'Grocery list',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 1),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 1),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 1),
-                    ),
-                    hintText: 'Add something to your list...',
-                    prefixIcon: const Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.grey[300]),
-                cursorColor: Colors.amber,
-              ),
-            ),
-            const SizedBox(
-              height: 400,
-            ),
-            const LetsShopButton()
-          ],
-        ),
+        body: _pageList[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -100,8 +60,9 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
               label: 'Profile',
             ),
           ],
-          currentIndex: _selectedIndex,
+          showUnselectedLabels: true,
           selectedItemColor: Colors.amber[800],
+          currentIndex: _selectedIndex,
           onTap: _onItemTapped,
         ),
       ),
