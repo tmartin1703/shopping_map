@@ -12,7 +12,7 @@ class _QuantityButtonState extends State<QuantityButton> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
               width: 2, color: Theme.of(context).colorScheme.primary)),
       width: 100,
@@ -28,13 +28,16 @@ class _QuantityButtonState extends State<QuantityButton> {
                 shape: MaterialStateProperty.all(
                   const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
+                      topLeft: Radius.circular(5),
+                      bottomLeft: Radius.circular(5),
                     ),
                   ),
                 ),
               ),
-              child: const Text('-'),
+              child: const Text(
+                '-',
+                style: TextStyle(fontSize: 25),
+              ),
             ),
           ),
           const Expanded(
@@ -52,13 +55,16 @@ class _QuantityButtonState extends State<QuantityButton> {
                 shape: MaterialStateProperty.all(
                   const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
+                      topRight: Radius.circular(5),
+                      bottomRight: Radius.circular(5),
                     ),
                   ),
                 ),
               ),
-              child: const Text('+'),
+              child: const Text(
+                '+',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
         ],
