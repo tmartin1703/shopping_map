@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
 /* PÉLDA KÓD */
-class LetsShopButton extends StatefulWidget {
+class LetsShopButton extends StatelessWidget {
   LetsShopButton(this._onTap);
 
   final void Function(int index) _onTap;
 
-  @override
-  State<LetsShopButton> createState() => _LetsShopButtonState();
-}
-
-class _LetsShopButtonState extends State<LetsShopButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,7 +24,7 @@ class _LetsShopButtonState extends State<LetsShopButton> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
             ),
-            onPressed: () => widget._onTap(1),
+            onPressed: () => _onTap(1),
             child: const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
