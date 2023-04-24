@@ -13,7 +13,8 @@ class _QuantityButtonState extends State<QuantityButton> {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(width: 2, color: Colors.blue)),
+          border: Border.all(
+              width: 2, color: Theme.of(context).colorScheme.primary)),
       width: 100,
       child: Row(
         children: [
