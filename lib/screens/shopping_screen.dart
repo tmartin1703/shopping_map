@@ -5,6 +5,10 @@ class ShoppingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Shopping');
+    return Center(
+        child: Icon(
+      Icons.map_outlined,
+      size: 200,
+    ));
   }
 }

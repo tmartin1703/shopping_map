@@ -14,10 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xFFFCA311),
-        )
-      ),
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: const Color(0xFFFCA311),
+      )),
       debugShowCheckedModeBanner: false,
       home: const MyNavigationBar(),
     );

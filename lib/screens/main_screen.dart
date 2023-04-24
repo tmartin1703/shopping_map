@@ -47,7 +47,7 @@ class MainScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     borderSide: const BorderSide(color: Colors.white, width: 1),
                   ),
-                  hintText: 'Add something to your list...',
+                  hintText: 'Add something...',
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: GestureDetector(
                       onTap: () => searchFieldText.clear(),
@@ -62,20 +62,19 @@ class MainScreen extends StatelessWidget {
             children: const <Widget>[
               ListTile(
                 title:
-                    Text("Anchor", style: TextStyle(color: Color(0XFF474D53))),
-                leading: Icon(Icons.anchor, color: Color(0xFF474D53)),
+                    Text("Bread", style: TextStyle(color: Color(0XFF474D53))),
+                leading: Icon(Icons.breakfast_dining, color: Color(0xFF474D53)),
                 trailing: QuantityButton(),
               ),
               ListTile(
                 title:
-                    Text("Alarm", style: TextStyle(color: Color(0XFF474D53))),
-                leading: Icon(Icons.alarm, color: Color(0xFF474D53)),
+                    Text("Apple", style: TextStyle(color: Color(0XFF474D53))),
+                leading: Icon(Icons.apple, color: Color(0xFF474D53)),
                 trailing: QuantityButton(),
               ),
               ListTile(
-                title: Text("Restaurant",
-                    style: TextStyle(color: Color(0XFF474D53))),
-                leading: Icon(Icons.restaurant, color: Color(0xFF474D53)),
+                title: Text("Milk", style: TextStyle(color: Color(0XFF474D53))),
+                leading: Icon(Icons.local_drink, color: Color(0xFF474D53)),
                 trailing: QuantityButton(),
               ),
             ],
