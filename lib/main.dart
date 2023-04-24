@@ -28,13 +28,19 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
-  final List<Widget> _pageList = const [
-    MainScreen(),
-    ShoppingScreen(),
-    ProfileScreen()
-  ];
+  late List<Widget> _pageList;
 
-  void _onItemTapped(int index) {
+  @override
+  void initState() {
+    _pageList = [
+      MainScreen(_changeScreen),
+      ShoppingScreen(),
+      ProfileScreen(),
+    ];
+    super.initState();
+  }
+
+  void _changeScreen(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -63,7 +69,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           showUnselectedLabels: true,
           selectedItemColor: Colors.amber[800],
           currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
+          onTap: _changeScreen,
         ),
       ),
     );

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 /* PÉLDA KÓD */
 class LetsShopButton extends StatefulWidget {
-  const LetsShopButton({super.key});
+  LetsShopButton(this._onTap);
+
+  final void Function(int index) _onTap;
 
   @override
   State<LetsShopButton> createState() => _LetsShopButtonState();
@@ -29,7 +30,7 @@ class _LetsShopButtonState extends State<LetsShopButton> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
             ),
-            onPressed: () {},
+            onPressed: () => widget._onTap(1),
             child: const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
