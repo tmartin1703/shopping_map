@@ -24,6 +24,7 @@ class _QuantityButtonState extends State<QuantityButton> {
             child: ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
                 shape: MaterialStateProperty.all(
                   const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
@@ -47,6 +48,7 @@ class _QuantityButtonState extends State<QuantityButton> {
             child: ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
                 shape: MaterialStateProperty.all(
                   const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
