@@ -12,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xFFFCA311),
+        )
+      ),
       debugShowCheckedModeBanner: false,
-      home: MyNavigationBar(),
+      home: const MyNavigationBar(),
     );
   }
 }
@@ -67,7 +72,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
             ),
           ],
           showUnselectedLabels: true,
-          selectedItemColor: Colors.amber[800],
           currentIndex: _selectedIndex,
           onTap: _changeScreen,
         ),

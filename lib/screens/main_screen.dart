@@ -11,6 +11,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final searchFieldText = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -36,6 +38,7 @@ class _MainScreenState extends State<MainScreen> {
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: TextField(
+              controller: searchFieldText,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18.0),
@@ -51,9 +54,11 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   hintText: 'Add something to your list...',
                   prefixIcon: const Icon(Icons.search),
+                  suffixIcon: GestureDetector(
+                      onTap: () => searchFieldText.clear(),
+                      child: const Icon(Icons.clear)),
                   filled: true,
                   fillColor: Colors.grey[300]),
-              cursorColor: Colors.amber,
             ),
           ),
           ListView(

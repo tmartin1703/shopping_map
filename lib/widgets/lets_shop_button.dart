@@ -20,11 +20,10 @@ class _LetsShopButtonState extends State<LetsShopButton> {
         child: OutlinedButton(
             style: OutlinedButton.styleFrom(
               elevation: 3,
-              foregroundColor: Colors.amber,
               backgroundColor: Colors.grey[200],
               side: const BorderSide(
                 width: 2.0,
-                color: Colors.amber,
+                color: Color(0xFFFCA311),
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
